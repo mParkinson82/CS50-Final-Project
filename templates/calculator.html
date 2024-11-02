@@ -1,0 +1,64 @@
+<!-- index.html -->
+{% extends "base.html" %}
+
+{% block nav %}
+
+    <button class="add-funds-button">$ Add Funds $</button>
+    <form action="{{ url_for('logout') }}" method="POST" style="display: inline;">
+        <button type="submit" class="logout-button">Logout</button>
+    </form>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="left-half">
+        <div class="number-pad">
+            <div class="display" id="display">$0.00</div>
+            <div class="buttons">
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn">.</button>
+                <button class="btn">0</button>
+                <button class="btn" id="q-btn">?</button>
+            </div>
+        </div>
+    </div>
+    <div class="right-half">
+        <div class="welcome-message">
+            <div class="welcome-line">
+                Hi <strong class="username">{{ username }}</strong>!
+            </div>
+            <div class="welcome-line">
+                You have <strong class="balance">${{ balance }}</strong> in your account.
+            </div>
+        </div>
+        <div class="result-image" style="display: none;">
+            <img src="{{ url_for('static', filename='images/smiley.png') }}" alt="Success" class="success-image" style="display: none;">
+                <h3 class="success-text">YES!!!</h3>
+                    <button class="confirm-purchase">Confirm Purchase?</button>
+            <img src="{{ url_for('static', filename='images/sad.png') }}" alt="Failure" class="failure-image" style="display: none;">
+                <h3 class="failure-text">NO, Sorry!</h3>
+        </div>
+    </div>
+    <div class="logout-modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Confirm Logout</h3>
+            <p>Are you sure you want to logout?</p>
+            <div class="modal-buttons">
+                <button class="modal-button cancel">Cancel</button>
+                <button class="modal-button confirm">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
