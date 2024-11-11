@@ -1,5 +1,7 @@
 # Do I Have Enough?
 
+https://youtu.be/XQtlSzmOaCU
+
 ## Harvard CS50 Final Project
 
 Do I have enough? is a web application designed in mind of young children who, when out shopping with their parents, wonder whether or not they have enough money to purchase that new item they really want. Whether the child has their own allowance or savings, or the parent wants to set a budget limit on their spending, this application affords the young child a better understanding and comprehension of budgetary restraints.
